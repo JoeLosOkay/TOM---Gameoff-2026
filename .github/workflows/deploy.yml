@@ -58,5 +58,5 @@ jobs:
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         run: |
-          butler push build/web mf-frosty/gameoff-entry-2026-team-orange-marmalade
+          butler push build/web mf-frosty/gameoff-entry-2026-team-orange-marmalade:web
 
