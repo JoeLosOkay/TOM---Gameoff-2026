@@ -1,0 +1,62 @@
+name: Deploy to itch.io
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify runner
+        run: |
+          echo "Hello from GitHub Actions!"
+    
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.1
+          include-templates: true
+          use-dotnet: false
+
+      - name: Check Godot version
+        run: godot --version
+      
+      - name: Export
+        run: |
+          mkdir -p build/web
+
+          godot \
+            --headless \
+            --export-release "Web" \
+            build/web/index.html
+    
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: build/web
+      
+      - name: Install Butler
+        run: |
+          curl -L https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default \
+            -o butler.zip
+
+          unzip butler.zip
+
+          chmod +x butler
+
+          sudo mv butler /usr/local/bin/
+
+          butler -V
+      
+      - name: Upload to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: |
+          butler push build/web mf-frosty/gameoff-entry-2026-team-orange-marmalade
+
