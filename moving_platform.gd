@@ -21,7 +21,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 
 func move_position():
-	print("In move_position")
 	# Changes platforms move target and prevents movement
 	if is_moving == false:
 		is_moving = true
