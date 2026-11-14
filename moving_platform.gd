@@ -28,8 +28,8 @@ func move_position():
 		
 		# Tween to move the platform and allows movement again when finished
 		active_tween = create_tween()
-		#active_tween.set_trans(Tween.TRANS_SINE)
-		#active_tween.set_ease(Tween.EASE_IN_OUT)
+		active_tween.set_trans(Tween.TRANS_SINE)
+		active_tween.set_ease(Tween.EASE_IN_OUT)
 		active_tween.tween_property(self, "position", target, MoveTime)
 		await active_tween.finished
 		is_moving = false
@@ -37,8 +37,3 @@ func move_position():
 	# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	#if Input.is_key_pressed(KEY_SHIFT):
-		#var target = MovePointB if not is_at_point_b else MovePointA
-		#position = position.move_toward(target, MoveSpeed * delta)
-		#if position.distance_to(target) <= 0:
-			#is_at_point_b = not is_at_point_b
