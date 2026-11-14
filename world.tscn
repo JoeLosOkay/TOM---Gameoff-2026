@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dqbsx1khpxa2"]
+
+[ext_resource type="PackedScene" uid="uid://csw41qovh13u7" path="res://character_body_2d.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://3picholh8dcm" path="res://Moving_Platform.tscn" id="2_fj7yv"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qs3il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5glnn"]
+size = Vector2(1153, 100)
+
+[node name="World" type="Node2D" unique_id=894377632]
+
+[node name="CharacterBody2D" parent="." unique_id=535340946 instance=ExtResource("1_f3sb7")]
+position = Vector2(561, 65)
+platform_on_leave = 1
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1152408278]
+position = Vector2(563, 590)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform" unique_id=1151220995]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12.999989, 0)
+scale = Vector2(1150, 100)
+mesh = SubResource("QuadMesh_qs3il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=227849288]
+position = Vector2(12.5, 0)
+shape = SubResource("RectangleShape2D_5glnn")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1484613178]
+position = Vector2(1165, 53)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2" unique_id=1423045246]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12.999989, 10)
+rotation = 1.5707964
+scale = Vector2(1150, 100)
+mesh = SubResource("QuadMesh_qs3il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=399740770]
+position = Vector2(12.5, 10)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_5glnn")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=787902273]
+position = Vector2(-13, 58)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3" unique_id=203680832]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(10, 10)
+rotation = 1.5707964
+scale = Vector2(1150, 100)
+mesh = SubResource("QuadMesh_qs3il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1535000975]
+position = Vector2(10, 10)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_5glnn")
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=1468380326]
+position = Vector2(1721, -734)
+rotation = 1.5707964
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform4" unique_id=1472741475]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(10, 10)
+rotation = 1.5707964
+scale = Vector2(1150, 100)
+mesh = SubResource("QuadMesh_qs3il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=1187669688]
+position = Vector2(10, 10)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_5glnn")
+
+[node name="Moving_Platform" parent="." unique_id=2024360150 instance=ExtResource("2_fj7yv")]
+position = Vector2(403, 408)
+
+[node name="Moving_Platform2" parent="." unique_id=1243204589 instance=ExtResource("2_fj7yv")]
+position = Vector2(663, 342)
+
+[node name="PlatformPointB" parent="Moving_Platform2" index="2" unique_id=158448723]
+position = Vector2(200, 0)
+
+[node name="Moving_Platform3" parent="." unique_id=357486965 instance=ExtResource("2_fj7yv")]
+position = Vector2(356, 213)
+rotation = 1.5707964
+
+[node name="Moving_Platform3" parent="Moving_Platform3" unique_id=381005836 instance=ExtResource("2_fj7yv")]
+position = Vector2(250.99997, -742)
+
+[editable path="Moving_Platform"]
+[editable path="Moving_Platform2"]
+[editable path="Moving_Platform3"]
+[editable path="Moving_Platform3/Moving_Platform3"]
