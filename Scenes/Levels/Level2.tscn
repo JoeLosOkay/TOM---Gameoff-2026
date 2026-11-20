@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dxn3leteo4m3t"]
+
+[ext_resource type="PackedScene" uid="uid://csw41qovh13u7" path="res://Scenes/Player.tscn" id="1_0ryud"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_5glnn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs3il"]
+size = Vector2(1151, 52)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0ryud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m40gi"]
+size = Vector2(1.0126562, 1.0126581)
+
+[node name="LevelRoot" type="Node2D" unique_id=513080443]
+
+[node name="Player" parent="." unique_id=535340946 instance=ExtResource("1_0ryud")]
+position = Vector2(172, 177)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1079741809]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1275869658]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(574.625, 429)
+scale = Vector2(1150.75, 52.5)
+mesh = SubResource("QuadMesh_5glnn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=372591949]
+position = Vector2(575.5, 429)
+shape = SubResource("RectangleShape2D_qs3il")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=564406951]
+position = Vector2(0, -359)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2" unique_id=669590010]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(574.625, 429)
+scale = Vector2(1150.75, 52.5)
+mesh = SubResource("QuadMesh_5glnn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=912039104]
+position = Vector2(575.5, 429)
+shape = SubResource("RectangleShape2D_qs3il")
+
+[node name="EndMarker" type="MeshInstance2D" parent="." unique_id=451122010]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(1115.75, 348.75)
+scale = Vector2(39.5, 39.5)
+mesh = SubResource("QuadMesh_0ryud")
+
+[node name="EndPoint" type="Area2D" parent="." unique_id=1809460631]
+position = Vector2(1115.75, 348.75)
+scale = Vector2(39.5, 39.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndPoint" unique_id=1690794735]
+position = Vector2(3.8146973e-06, 0)
+shape = SubResource("RectangleShape2D_m40gi")
