@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqbsx1khpxa2"]
 
-[ext_resource type="PackedScene" uid="uid://csw41qovh13u7" path="res://character_body_2d.tscn" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://3picholh8dcm" path="res://Moving_Platform.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://csw41qovh13u7" path="res://Scenes/Player.tscn" id="1_mdeio"]
+[ext_resource type="PackedScene" uid="uid://3picholh8dcm" path="res://Scenes/Moving_Platform.tscn" id="2_q6l42"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qs3il"]
 
@@ -10,7 +10,7 @@ size = Vector2(1153, 100)
 
 [node name="World" type="Node2D" unique_id=894377632]
 
-[node name="CharacterBody2D" parent="." unique_id=535340946 instance=ExtResource("1_f3sb7")]
+[node name="Player" parent="." unique_id=535340946 instance=ExtResource("1_mdeio")]
 position = Vector2(561, 65)
 platform_on_leave = 1
 
@@ -73,20 +73,20 @@ position = Vector2(10, 10)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_5glnn")
 
-[node name="Moving_Platform" parent="." unique_id=2024360150 instance=ExtResource("2_fj7yv")]
+[node name="Moving_Platform" parent="." unique_id=2024360150 instance=ExtResource("2_q6l42")]
 position = Vector2(403, 408)
 
-[node name="Moving_Platform2" parent="." unique_id=1243204589 instance=ExtResource("2_fj7yv")]
+[node name="Moving_Platform2" parent="." unique_id=1243204589 instance=ExtResource("2_q6l42")]
 position = Vector2(663, 342)
 
 [node name="PlatformPointB" parent="Moving_Platform2" index="2" unique_id=158448723]
 position = Vector2(200, 0)
 
-[node name="Moving_Platform3" parent="." unique_id=357486965 instance=ExtResource("2_fj7yv")]
+[node name="Moving_Platform3" parent="." unique_id=357486965 instance=ExtResource("2_q6l42")]
 position = Vector2(356, 213)
 rotation = 1.5707964
 
-[node name="Moving_Platform3" parent="Moving_Platform3" unique_id=381005836 instance=ExtResource("2_fj7yv")]
+[node name="Moving_Platform3" parent="Moving_Platform3" unique_id=381005836 instance=ExtResource("2_q6l42")]
 position = Vector2(250.99997, -742)
 
 [editable path="Moving_Platform"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3picholh8dcm"]
 
-[ext_resource type="Script" uid="uid://doofdg5nuxrnf" path="res://moving_platform.gd" id="1_1unfh"]
+[ext_resource type="Script" uid="uid://doofdg5nuxrnf" path="res://Scripts/moving_platform.gd" id="1_1unfh"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qs3il"]
 
