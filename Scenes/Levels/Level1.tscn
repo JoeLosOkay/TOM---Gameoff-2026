@@ -38,6 +38,7 @@ mesh = SubResource("QuadMesh_qs3il")
 [node name="EndPoint" type="Area2D" parent="." unique_id=449592343]
 position = Vector2(1080, 347)
 scale = Vector2(39.5, 39.5)
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndPoint" unique_id=937456471]
 position = Vector2(3.8146973e-06, 0)

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bnr406hfn0y2f"]
+
+[ext_resource type="Script" uid="uid://cyg5mgib0jnam" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://la366ypbyto1" path="res://icon.svg" id="2_afpow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs3il"]
+size = Vector2(63, 69)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=470196984 groups=["Killable_Enemy"]]
+collision_layer = 5
+script = ExtResource("1_1f0kj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=88110106]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.515625, 0.5546875)
+texture = ExtResource("2_afpow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=352614941]
+visible = false
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_qs3il")
+
+[node name="LedgeRaycast" type="RayCast2D" parent="." unique_id=1490578698]
+position = Vector2(50, 0)
+target_position = Vector2(0, 58)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1715836715]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=247790629]
+visible = false
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_qs3il")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
