@@ -14,7 +14,7 @@ size = Vector2(1.0126562, 1.0126581)
 
 [node name="LevelRoot" type="Node2D" unique_id=513080443]
 
-[node name="Player" parent="." unique_id=535340946 instance=ExtResource("1_0ryud")]
+[node name="Player" parent="." unique_id=535340946 groups=["Player"] instance=ExtResource("1_0ryud")]
 position = Vector2(172, 177)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1079741809]

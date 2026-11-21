@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://rqtx2gnkl57q"]
+
+[ext_resource type="Script" uid="uid://cq1xl6l8imkuc" path="res://Scripts/hazard.gd" id="1_ci3js"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qs3il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5glnn"]
+size = Vector2(30, 29)
+
+[node name="Hazard" type="Area2D" unique_id=1479421746]
+script = ExtResource("1_ci3js")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1873146215]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(14.250002, 13.749998)
+scale = Vector2(29.500004, 28.499996)
+mesh = SubResource("QuadMesh_qs3il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1092937635]
+position = Vector2(14, 13.5)
+shape = SubResource("RectangleShape2D_5glnn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

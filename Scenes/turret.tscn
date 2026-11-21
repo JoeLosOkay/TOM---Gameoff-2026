@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c7frug432es5"]
+
+[ext_resource type="Script" uid="uid://bhs2ar6gwanfs" path="res://Scripts/turret.gd" id="1_fcprl"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qs3il"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_5glnn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs3il"]
+size = Vector2(37, 67)
+
+[node name="Turret" type="StaticBody2D" unique_id=479319056]
+script = ExtResource("1_fcprl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=766299706]
+modulate = Color(1, 0.9607843, 0.16470589, 1)
+position = Vector2(0, 56.25)
+scale = Vector2(36.5, 67.5)
+mesh = SubResource("QuadMesh_qs3il")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=179833159]
+modulate = Color(1, 0.9607843, 0.16470589, 1)
+position = Vector2(0, 17.25)
+scale = Vector2(14.499999, 14.5)
+mesh = SubResource("QuadMesh_5glnn")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1418392700]
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1956288346]
+position = Vector2(0, 56.5)
+shape = SubResource("RectangleShape2D_qs3il")
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
