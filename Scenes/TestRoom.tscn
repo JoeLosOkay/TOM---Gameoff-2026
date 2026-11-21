@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://csw41qovh13u7" path="res://Scenes/Player.tscn" id="1_mdeio"]
 [ext_resource type="PackedScene" uid="uid://3picholh8dcm" path="res://Scenes/Moving_Platform.tscn" id="2_q6l42"]
+[ext_resource type="PackedScene" uid="uid://c7frug432es5" path="res://Scenes/turret.tscn" id="3_q6l42"]
+[ext_resource type="PackedScene" uid="uid://rqtx2gnkl57q" path="res://Scenes/hazard.tscn" id="4_wtyfb"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qs3il"]
 
@@ -10,7 +12,7 @@ size = Vector2(1153, 100)
 
 [node name="World" type="Node2D" unique_id=894377632]
 
-[node name="Player" parent="." unique_id=535340946 instance=ExtResource("1_mdeio")]
+[node name="Player" parent="." unique_id=535340946 groups=["Player"] instance=ExtResource("1_mdeio")]
 position = Vector2(561, 65)
 platform_on_leave = 1
 
@@ -89,7 +91,22 @@ rotation = 1.5707964
 [node name="Moving_Platform3" parent="Moving_Platform3" unique_id=381005836 instance=ExtResource("2_q6l42")]
 position = Vector2(250.99997, -742)
 
+[node name="Turret" parent="." unique_id=2037286465 instance=ExtResource("3_q6l42")]
+position = Vector2(820, 276)
+rotation = 1.5707964
+
+[node name="Moving_Platform4" parent="." unique_id=1969174478 instance=ExtResource("2_q6l42")]
+position = Vector2(1007, 55)
+rotation = 1.5707964
+
+[node name="PlatformPointB" parent="Moving_Platform4" index="2" unique_id=158448723]
+position = Vector2(168, -7.6293945e-06)
+
+[node name="Hazard" parent="." unique_id=1479421746 instance=ExtResource("4_wtyfb")]
+position = Vector2(108, 511)
+
 [editable path="Moving_Platform"]
 [editable path="Moving_Platform2"]
 [editable path="Moving_Platform3"]
 [editable path="Moving_Platform3/Moving_Platform3"]
+[editable path="Moving_Platform4"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b64b1aj2ansi5"]
+
+[ext_resource type="Script" uid="uid://bf1faruaeqqmw" path="res://Scripts/projectile.gd" id="1_f8cdk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qs3il"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qs3il"]
+radius = 13.0
+
+[node name="Projectile" type="CharacterBody2D" unique_id=553004429]
+script = ExtResource("1_f8cdk")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=251954201]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(26.78005, 26.500004)
+mesh = SubResource("SphereMesh_qs3il")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1720688858]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=69517872]
+shape = SubResource("CircleShape2D_qs3il")
+
+[node name="Life" type="Timer" parent="." unique_id=1574380755]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Life" to="." method="_on_life_timeout"]
