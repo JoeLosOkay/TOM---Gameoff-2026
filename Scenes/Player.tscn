@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wudgo"]
 size = Vector2(53, 125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs3il"]
+size = Vector2(36, 104)
+
 [node name="Player" type="CharacterBody2D" unique_id=535340946]
 collision_layer = 2
 script = ExtResource("1_ij6vw")
@@ -16,8 +19,17 @@ scale = Vector2(0.4296875, 1)
 texture = ExtResource("1_f50pn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=838001094]
+visible = false
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_wudgo")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1295861511]
 offset = Vector2(0, -50)
+
+[node name="CrushArea" type="Area2D" parent="." unique_id=551561637]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrushArea" unique_id=1706789957]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_qs3il")
+
+[connection signal="body_entered" from="CrushArea" to="." method="_on_crush_area_body_entered"]

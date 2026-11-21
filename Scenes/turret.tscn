@@ -25,6 +25,7 @@ scale = Vector2(14.499999, 14.5)
 mesh = SubResource("QuadMesh_5glnn")
 
 [node name="Cooldown" type="Timer" parent="." unique_id=1418392700]
+wait_time = 2.0
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1956288346]

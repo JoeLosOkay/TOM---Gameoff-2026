@@ -6,8 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qs3il"]
 size = Vector2(63, 69)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5glnn"]
+size = Vector2(50, 56)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=470196984 groups=["Killable_Enemy"]]
-collision_layer = 5
+collision_layer = 4
 script = ExtResource("1_1f0kj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=88110106]
@@ -24,12 +27,19 @@ shape = SubResource("RectangleShape2D_qs3il")
 position = Vector2(50, 0)
 target_position = Vector2(0, 58)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1715836715]
+[node name="KillArea" type="Area2D" parent="." unique_id=1715836715]
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=247790629]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea" unique_id=247790629]
 visible = false
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_qs3il")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CrushArea" type="Area2D" parent="." unique_id=366480037]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrushArea" unique_id=212681369]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_5glnn")
+
+[connection signal="body_entered" from="KillArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="CrushArea" to="." method="_on_crush_area_body_entered"]

@@ -45,6 +45,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		body.Kill()
 		
-		
+func _on_crush_area_body_entered(body: Node2D) -> void:
+	Kill()
+
 func Kill():
 	queue_free()
