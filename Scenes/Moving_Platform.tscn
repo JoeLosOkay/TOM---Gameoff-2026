@@ -12,6 +12,7 @@ size = Vector2(149, 30)
 [node name="Moving_Platform" type="Node2D" unique_id=2024360150]
 
 [node name="Moving Platform" type="AnimatableBody2D" parent="." unique_id=947345590]
+collision_mask = 7
 script = ExtResource("1_1unfh")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Moving Platform" unique_id=742793917]

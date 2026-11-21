@@ -16,7 +16,7 @@ scale = Vector2(26.78005, 26.500004)
 mesh = SubResource("SphereMesh_qs3il")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1720688858]
-collision_mask = 3
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=69517872]
 shape = SubResource("CircleShape2D_qs3il")
