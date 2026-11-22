@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cci5lwp4at3a1"]
+
+[ext_resource type="Script" uid="uid://06p4p64ifl7k" path="res://Scripts/collectable.gd" id="1_3rsma"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qs3il"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wudgo"]
+
+[node name="Collectable" type="Area2D" unique_id=1678285019]
+collision_mask = 3
+script = ExtResource("1_3rsma")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=229515112]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(9.250283, 8.750002)
+scale = Vector2(19.521545, 18.500004)
+mesh = SubResource("SphereMesh_qs3il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=896564093]
+position = Vector2(9, 9)
+shape = SubResource("CircleShape2D_wudgo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

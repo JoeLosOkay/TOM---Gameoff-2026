@@ -27,6 +27,11 @@ func _setup_level(level_root: Node):
 	var Endpoint = level_root.get_node_or_null("EndPoint")
 	if Endpoint:
 		Endpoint.body_entered.connect(_on_exit_body_entered)
+	
+	var collectables = level_root.get_node_or_null("Collectables")
+	if collectables:
+		for collectable in collectables.get_children():
+			collectable.collected.connect(_on_player_collect)
 
 
 
@@ -40,3 +45,5 @@ func _on_exit_body_entered(body: Node2D):
 		level += 1
 		call_deferred("_load_level" ,level)
 	
+func _on_player_collect():
+	pass

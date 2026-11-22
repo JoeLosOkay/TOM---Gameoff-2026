@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cj5bi2c3tgubu"]
 
 [ext_resource type="PackedScene" uid="uid://csw41qovh13u7" path="res://Scenes/Player.tscn" id="1_5jgm0"]
+[ext_resource type="PackedScene" uid="uid://cci5lwp4at3a1" path="res://Scenes/collectable.tscn" id="2_36ke7"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_5glnn"]
 
@@ -43,3 +44,11 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndPoint" unique_id=937456471]
 position = Vector2(3.8146973e-06, 0)
 shape = SubResource("RectangleShape2D_5glnn")
+
+[node name="Collectables" type="Node2D" parent="." unique_id=1677971170]
+
+[node name="Collectable" parent="Collectables" unique_id=1678285019 instance=ExtResource("2_36ke7")]
+position = Vector2(581, 340)
+
+[node name="Collectable2" parent="Collectables" unique_id=1662275157 instance=ExtResource("2_36ke7")]
+position = Vector2(690, 338)
